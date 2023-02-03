@@ -178,3 +178,4 @@ pgtab_BK % du -sh .git
 668K    .git
 ```
 
+I'm still sure what "secrets" might or might not be hidden in there, but it serves my purpose for now.

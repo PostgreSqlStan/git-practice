@@ -131,3 +131,13 @@ Running the command mentioned in the error message fixes it.
 
 I'm still not entirely sure what, if any, data fragments either of the methods might leave behind, but either seem to clean up the history in the log.
 
+---
+
+[Git Remove All Commits History](https://raturi.in/blog/cleaning-git-repository/):
+
+This extra step convinced me (using the second method of clearing history) the files were actually removed:
+
+```
+git gc --aggressive --prune=all # remove the old files
+```
+

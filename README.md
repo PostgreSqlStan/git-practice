@@ -141,3 +141,40 @@ This extra step convinced me (using the second method of clearing history) the f
 git gc --aggressive --prune=all # remove the old files
 ```
 
+---
+
+OK, continuing experiments on another, larger repo.
+
+```
+`git update-ref -d HEAD`
+git add .
+git commit -m 'initial (re)commit'
+```
+
+It reduced the log to a single entry:
+```
+git log
+commit 9fb31fce124b5448ff9c77f885767a4d100d826f (HEAD -> main)
+Author: PostgreSqlStan <91010505+PostgreSqlStan@users.noreply.github.com>
+Date:   Fri Feb 3 14:30:58 2023 -0600
+
+    initial (re)commit
+```
+
+Then, the `gc` pruning command reduced the size of the `.git` directory (a lot):
+```
+pgtab_BK % du -sh .git
+3.5M    .git
+
+pgtab_BK % git gc --aggressive --prune=all
+Enumerating objects: 766, done.
+Counting objects: 100% (766/766), done.
+Delta compression using up to 8 threads
+Compressing objects: 100% (740/740), done.
+Writing objects: 100% (766/766), done.
+Total 766 (delta 486), reused 9 (delta 0), pack-reused 0
+
+pgtab_BK % du -sh .git
+668K    .git
+```
+

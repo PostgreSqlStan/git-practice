@@ -48,24 +48,3 @@ git push -u origin assets
 ![cat pic?](https://github.com/postgresqlstan/git-practice/blob/assets/nap-time.jpeg)
 
 
-**Notes:** This works. Furthermore, `reset --hard` seems better than the `rm -rf` method I've seen elsewhere. However, it only deletes the working directory and staging area, which would not be appropriate for actually removing confidential information you might have committed.
-
-The old commits are still accessible:
-
-```
-git-practice % git reflog
-58e41b9 (HEAD -> main, origin/main, origin/HEAD) HEAD@{0}: commit: removed test dir
-ee3ec50 HEAD@{1}: commit: ditto
-7dc65bc HEAD@{2}: commit: ditto
-3926c3e HEAD@{3}: commit: ditto
-56997b9 HEAD@{4}: commit: updated readme
-a528620 HEAD@{5}: commit: testing asset branch link
-d7f50ff HEAD@{6}: checkout: moving from assets to main
-78b11b3 (origin/assets, assets) HEAD@{7}: commit (initial): Added cat picture
-d7f50ff HEAD@{8}: commit: preparing second experiment
-35b536c HEAD@{9}: commit (initial): tried: git update-ref -d HEAD
-f77cdd7 HEAD@{11}: commit: 3rd commit
-9db8d5d HEAD@{12}: commit: 2nd commit
-822e0a0 HEAD@{13}: clone: from github.com:PostgreSqlStan/git-practice.git
-```
-
